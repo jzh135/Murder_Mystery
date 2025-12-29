@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* Custom dark theme for murder mystery atmosphere */
+:root {
+  --bg-primary: #0f0f14;
+  --bg-secondary: #1a1a24;
+  --bg-card: #22222e;
+  --text-primary: #e4e4e7;
+  --text-secondary: #a1a1aa;
+  --accent-red: #dc2626;
+  --accent-gold: #d4a24c;
+  --accent-purple: #7c3aed;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1a2e 50%, #16162a 100%);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(34, 34, 46, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+/* Glow effects */
+.glow-red {
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(212, 162, 76, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 
+         text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300
+         shadow-lg hover:shadow-red-500/25 hover:scale-105;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-r from-zinc-700 to-zinc-600 hover:from-zinc-600 hover:to-zinc-500
+         text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300
+         shadow-lg hover:shadow-zinc-500/25;
+}
+
+.btn-gold {
+  @apply bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-500 hover:to-yellow-500
+         text-black font-semibold py-3 px-6 rounded-lg transition-all duration-300
+         shadow-lg hover:shadow-yellow-500/25;
+}
+
+/* Input styles */
+.input-dark {
+  @apply bg-zinc-800/50 border border-zinc-700 rounded-lg px-4 py-3 text-white
+         placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-red-500
+         focus:border-transparent transition-all duration-300;
+}

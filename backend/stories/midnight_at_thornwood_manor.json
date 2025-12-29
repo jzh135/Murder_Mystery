@@ -1,0 +1,263 @@
+{
+  "id": "midnight-at-thornwood-manor",
+  "title": "Midnight at Thornwood Manor",
+  "title_cn": "荆棘庄园的午夜",
+  "description": "A wealthy art collector is found dead during his own gallery opening. Among the guests are old friends, bitter rivals, and hidden enemies. Who silenced him forever?",
+  "player_count": {
+    "min": 4,
+    "max": 6
+  },
+  "difficulty": "beginner",
+  "duration_minutes": 60,
+  "setting": {
+    "time": "Present day, late evening",
+    "location": "Thornwood Manor - a Victorian mansion converted into a private art gallery",
+    "atmosphere": "Elegant but tense, with whispered conversations and suspicious glances"
+  },
+  "characters": [
+    {
+      "id": "victoria",
+      "name": "Victoria Thornwood",
+      "name_cn": "维多利亚·索恩伍德",
+      "role": "suspect",
+      "is_culprit": false,
+      "public_info": "The victim's elegant wife of 20 years. Known for her charity work and impeccable taste.",
+      "private_background": "Your marriage has been loveless for years. Richard threatened to divorce you and leave you with nothing. You were negotiating a secret settlement with his lawyer.",
+      "secrets": [
+        "You discovered Richard was planning to change his will",
+        "You have a secret bank account in Switzerland"
+      ],
+      "relationships": {
+        "marcus": "You suspect he's been stealing from Richard",
+        "elena": "She was once your friend, but you know she had an affair with Richard",
+        "james": "He's always been kind to you"
+      },
+      "goals": [
+        "Protect your inheritance",
+        "Find out who really killed Richard",
+        "Keep your divorce negotiations secret"
+      ]
+    },
+    {
+      "id": "marcus",
+      "name": "Marcus Chen",
+      "name_cn": "马库斯·陈",
+      "role": "suspect",
+      "is_culprit": true,
+      "public_info": "Richard's trusted business partner for 15 years. Co-owner of Thornwood Art Acquisitions.",
+      "private_background": "Richard discovered you've been embezzling money for years. Tonight, he was going to expose you and press charges. You poisoned his wine during the toast.",
+      "secrets": [
+        "You've stolen over $2 million from the business",
+        "You accessed Richard's wine glass during the toast",
+        "You have gambling debts to dangerous people"
+      ],
+      "relationships": {
+        "victoria": "You've always been professionally courteous",
+        "elena": "She knows too much about the business finances",
+        "james": "Richard's loyal dog - you don't trust him"
+      },
+      "goals": [
+        "Deflect suspicion onto others",
+        "Destroy any evidence of embezzlement",
+        "Survive the night without being caught"
+      ]
+    },
+    {
+      "id": "elena",
+      "name": "Elena Vasquez",
+      "name_cn": "艾琳娜·巴斯克斯",
+      "role": "suspect",
+      "is_culprit": false,
+      "public_info": "A renowned art appraiser and long-time friend of the Thornwood family.",
+      "private_background": "You and Richard had a brief affair 5 years ago. You ended it, but Richard kept threatening to tell Victoria unless you authenticated some questionable art pieces for him.",
+      "secrets": [
+        "Your affair with Richard",
+        "You authenticated three forged paintings for Richard",
+        "You were being blackmailed"
+      ],
+      "relationships": {
+        "victoria": "You feel guilty about betraying her trust",
+        "marcus": "You noticed irregularities in his expense reports",
+        "james": "He seems to know more than he lets on"
+      },
+      "goals": [
+        "Keep your affair secret",
+        "Find evidence of Richard's forgery scheme",
+        "Clear your name"
+      ]
+    },
+    {
+      "id": "james",
+      "name": "James Morrison",
+      "name_cn": "詹姆斯·莫里森",
+      "role": "witness",
+      "is_culprit": false,
+      "public_info": "Richard's personal assistant for 8 years. Organized tonight's gallery opening.",
+      "private_background": "You saw Marcus near Richard's wine glass right before the toast. You were going to tell Richard about the embezzlement tomorrow - you had gathered all the evidence.",
+      "secrets": [
+        "You have evidence of Marcus's embezzlement on your laptop",
+        "You saw Marcus touch Richard's glass",
+        "Richard was like a father to you"
+      ],
+      "relationships": {
+        "victoria": "You respect her dignity despite the difficult marriage",
+        "marcus": "You've been secretly investigating him for months",
+        "elena": "You overheard her arguing with Richard last week"
+      },
+      "goals": [
+        "Bring the killer to justice",
+        "Share what you saw at the right moment",
+        "Protect Richard's legacy"
+      ]
+    }
+  ],
+  "victim": {
+    "name": "Richard Thornwood",
+    "description": "A 62-year-old wealthy art collector and gallery owner. Known for his sharp business sense and charming public persona, he had a darker side known only to those closest to him."
+  },
+  "clues": [
+    {
+      "id": "poison-vial",
+      "name": "Empty Vial",
+      "description": "A small glass vial hidden behind a potted plant near the bar. It smells faintly of bitter almonds.",
+      "location": "gallery-main",
+      "discovery_hint": "Search around the bar area carefully",
+      "reveals": "The murder weapon was poison, likely cyanide",
+      "required": true
+    },
+    {
+      "id": "wine-glass",
+      "name": "Richard's Wine Glass",
+      "description": "The victim's wine glass still has residue. The rim shows a slight discoloration on one side.",
+      "location": "gallery-main",
+      "discovery_hint": "Examine where Richard was standing",
+      "reveals": "The poison was in the wine, applied to one side of the glass",
+      "required": true
+    },
+    {
+      "id": "financial-documents",
+      "name": "Hidden Financial Records",
+      "description": "Spreadsheets showing large discrepancies between reported and actual revenue over the past 3 years.",
+      "location": "study",
+      "discovery_hint": "Check the desk drawers",
+      "reveals": "Someone has been embezzling significant funds from Thornwood Art Acquisitions",
+      "required": true
+    },
+    {
+      "id": "threatening-letter",
+      "name": "Threatening Letter",
+      "description": "A typed letter warning Richard to 'keep quiet or face consequences'. Dated one week ago.",
+      "location": "study",
+      "discovery_hint": "Look in the paper shredder - it jammed",
+      "reveals": "Richard was being threatened by someone with something to hide",
+      "required": true
+    },
+    {
+      "id": "affair-photos",
+      "name": "Compromising Photographs",
+      "description": "Photos showing Richard with Elena in what appears to be a romantic setting.",
+      "location": "bedroom",
+      "discovery_hint": "Check the nightstand",
+      "reveals": "Richard and Elena had a relationship",
+      "required": false
+    },
+    {
+      "id": "gambling-receipt",
+      "name": "Casino Receipt",
+      "description": "A receipt from a casino showing a $50,000 loss. The name 'M. Chen' is printed on it.",
+      "location": "coat-room",
+      "discovery_hint": "Search the coat pockets",
+      "reveals": "Marcus has significant gambling debts",
+      "required": true
+    },
+    {
+      "id": "witness-note",
+      "name": "James's Notes",
+      "description": "Handwritten notes documenting suspicious activities, including 'MC touched R's glass at 9:15 PM'.",
+      "location": "gallery-main",
+      "discovery_hint": "James seems nervous - perhaps he has something to share",
+      "reveals": "James witnessed Marcus near Richard's glass",
+      "required": true
+    }
+  ],
+  "locations": [
+    {
+      "id": "gallery-main",
+      "name": "Main Gallery",
+      "name_cn": "主展厅",
+      "description": "The grand hall where the gallery opening took place. Paintings line the walls, and a bar is set up in the corner. This is where Richard collapsed.",
+      "searchable_items": ["bar area", "wine glasses", "potted plants", "Richard's body area"]
+    },
+    {
+      "id": "study",
+      "name": "Richard's Study",
+      "name_cn": "书房",
+      "description": "A private office filled with papers, a large mahogany desk, and a paper shredder that seems to have jammed.",
+      "searchable_items": ["desk drawers", "paper shredder", "filing cabinet", "safe"]
+    },
+    {
+      "id": "bedroom",
+      "name": "Master Bedroom",
+      "name_cn": "主卧室",
+      "description": "An elegantly decorated bedroom. Personal items and photographs are scattered around.",
+      "searchable_items": ["nightstand", "dresser", "closet", "under the bed"]
+    },
+    {
+      "id": "coat-room",
+      "name": "Coat Room",
+      "name_cn": "衣帽间",
+      "description": "A small room near the entrance where guests' coats are stored.",
+      "searchable_items": ["coat pockets", "shelf", "umbrella stand"]
+    }
+  ],
+  "timeline": [
+    {
+      "time": "7:00 PM",
+      "event": "Guests begin arriving at Thornwood Manor"
+    },
+    {
+      "time": "8:00 PM",
+      "event": "Gallery opening officially begins"
+    },
+    {
+      "time": "9:00 PM",
+      "event": "Richard announces a toast to celebrate the new art acquisition"
+    },
+    {
+      "time": "9:15 PM",
+      "event": "During the toast preparation, Marcus is seen near Richard's glass (witnessed by James)"
+    },
+    {
+      "time": "9:20 PM",
+      "event": "Richard raises his glass and drinks"
+    },
+    {
+      "time": "9:25 PM",
+      "event": "Richard collapses, glass shatters on the floor"
+    },
+    {
+      "time": "9:30 PM",
+      "event": "Richard is pronounced dead. Police are called, no one can leave"
+    }
+  ],
+  "solution": {
+    "culprit_id": "marcus",
+    "method": "Cyanide poison applied to Richard's wine glass",
+    "motive": "Richard had discovered Marcus's years of embezzlement and was going to expose him at the gallery opening, ruining Marcus and sending him to prison",
+    "full_explanation": "Marcus Chen had been embezzling money from Thornwood Art Acquisitions for over three years to cover his gambling debts. When Richard discovered the theft, he confronted Marcus privately and threatened to reveal everything at tonight's gallery opening. Desperate, Marcus obtained cyanide and, during the chaos of the toast preparation at 9:15 PM, he applied the poison to one side of Richard's wine glass, knowing Richard always held his glass the same way. James Morrison witnessed Marcus near the glass but didn't understand the significance until after Richard's death. The empty vial was hastily hidden behind a potted plant, and Marcus hoped to destroy the financial evidence in the study before anyone could find it."
+  },
+  "phases": {
+    "intro_narration": "The night was meant to be a celebration. Thornwood Manor glittered with lights as the city's elite gathered for Richard Thornwood's exclusive gallery opening. But at 9:25 PM, the champagne toast turned to screams as Richard collapsed, his wine glass shattering on the marble floor. Now, with the police on their way and the manor locked down, four people stand in the shadow of suspicion. The truth lies hidden in secrets, lies, and a deadly glass of wine. Can you uncover what really happened at Thornwood Manor?",
+    "investigation_prompts": [
+      "Search the room where Richard collapsed for any overlooked evidence",
+      "Where was everyone standing during the toast?",
+      "Has anyone noticed anything unusual about the business lately?"
+    ],
+    "discussion_prompts": [
+      "Who had access to Richard's wine glass?",
+      "What secrets was Richard keeping?",
+      "Who benefits most from Richard's death?",
+      "Let's piece together the timeline of the evening"
+    ]
+  }
+}
